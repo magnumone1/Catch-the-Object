@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+   margin: 0%;
+}
+
+body {
+   max-width: 100vw;
+   overflow: hidden;
+   background-image: url('images/background.jpg')
+}
+
+.main-name {
+   font-family: "Nunito", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 60px;
+   color: rgb(218, 255, 69);
+   display: flex;
+   justify-content: center;
+   margin-top: 50px;
+}
+
+.container-moon {
+   position: relative;
+   top: 200px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.start-btn {
+   font-family: "Nunito", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 600;
+   font-style: normal;
+   font-size: 40px;
+   color: #333;
+   background-color: rgba(50, 50, 50, 0.5);
+   width: 300px;
+   border: 5px solid #333;
+   border-radius: 30px;
+   position: relative;
+   top: 200px;
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+   cursor: pointer;
+   transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-btn:hover {
+   color: white;
+   background-color: rgba(50, 50, 50, 0.8);
+   transform: scale(1.05);
+}
+
+.start-btn:active {
+   background-color: rgba(50, 50, 50, 0.6);
+   transform: scale(1);
+}
+
+.down-btns {
+   width: 1000px;
+   display: flex;
+   justify-content: center;
+   position: relative;
+   top: 250px;
+   margin: 0 auto;
+}
+
+.rules-btn {
+   font-family: "Nunito", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 600;
+   font-style: normal;
+   font-size: 40px;
+   color: #333;
+   background-color: rgba(50, 50, 50, 0.5);
+   width: 300px;
+   border: 5px solid #333;
+   border-radius: 30px;
+   display: flex;
+   justify-content: center;
+   margin-right: 50px;
+   cursor: pointer;
+   transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.rules-btn:hover {
+   color: white;
+   background-color: rgba(50, 50, 50, 0.8);
+   transform: scale(1.05);
+}
+
+.rules-btn:active {
+   background-color: rgba(50, 50, 50, 0.6);
+   transform: scale(1);
+}
+
+.difficulty-btn {
+   font-family: "Nunito", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 600;
+   font-style: normal;
+   font-size: 40px;
+   color: #333;
+   background-color: rgba(50, 50, 50, 0.5);
+   width: 300px;
+   border: 5px solid #333;
+   border-radius: 30px;
+   display: flex;
+   justify-content: center;
+   margin-left: 50px;
+   cursor: pointer;
+   transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.difficulty-btn:hover {
+   color: white;
+   background-color: rgba(50, 50, 50, 0.8);
+   transform: scale(1.05);
+}
+
+.moon {
+   width: 200vh;
+   margin: 0 auto;
+}

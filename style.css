@@ -16,7 +16,8 @@ body {
    font-weight: 700;
    font-style: normal;
    font-size: 60px;
-   color: rgb(218, 255, 69);
+   color: white;
+
    display: flex;
    justify-content: center;
    margin-top: 50px;
@@ -48,6 +49,7 @@ body {
    margin: 0 auto;
    cursor: pointer;
    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+   z-index: 10;
 }
 
 .start-btn:hover {
@@ -59,6 +61,7 @@ body {
 .start-btn:active {
    background-color: rgba(50, 50, 50, 0.6);
    transform: scale(1);
+   z-index: 10;
 }
 
 .down-btns {
@@ -68,6 +71,7 @@ body {
    position: relative;
    top: 250px;
    margin: 0 auto;
+   z-index: 10;
 }
 
 .rules-btn {
@@ -86,6 +90,7 @@ body {
    margin-right: 50px;
    cursor: pointer;
    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; 
+   z-index: 10;
 }
 
 .rules-btn:hover {
@@ -115,6 +120,7 @@ body {
    margin-left: 50px;
    cursor: pointer;
    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+   z-index: 10;
 }
 
 .difficulty-btn:hover {
@@ -126,4 +132,6 @@ body {
 .moon {
    width: 200vh;
    margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }

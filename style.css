@@ -12,15 +12,40 @@ body {
 
 .main-name {
    font-family: "Nunito", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 700;
-   font-style: normal;
-   font-size: 60px;
-   color: white;
+   font-weight: 900;
+   font-size: 70px;
+   text-align: center;
+   color: #ffffff;
+   text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff,
+      0 0 40px #00aaff,
+      0 0 70px #0077ff,
+      0 0 80px #0077ff,
+      0 0 100px #0077ff;
 
-   display: flex;
-   justify-content: center;
    margin-top: 50px;
+   animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes pulseGlow {
+   0% {
+      text-shadow:
+         0 0 5px #ffffff,
+         0 0 10px #00ffff,
+         0 0 15px #00ffff,
+         0 0 20px #00aaff,
+         0 0 30px #0077ff;
+   }
+   100% {
+      text-shadow:
+         0 0 15px #ffffff,
+         0 0 25px #00ffff,
+         0 0 35px #00ffff,
+         0 0 50px #00aaff,
+         0 0 60px #0077ff;
+   }
 }
 
 .container-moon {
@@ -31,7 +56,7 @@ body {
    flex-direction: column;
 }
 
-.start-btn {
+.start-btn, .rules-btn, .difficulty-btn {
    font-family: "Nunito", sans-serif;
    font-optical-sizing: auto;
    font-weight: 600;
@@ -42,26 +67,29 @@ body {
    width: 300px;
    border: 5px solid #333;
    border-radius: 30px;
-   position: relative;
-   top: 200px;
    display: flex;
    justify-content: center;
-   margin: 0 auto;
    cursor: pointer;
    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
    z-index: 10;
 }
 
-.start-btn:hover {
+.start-btn:hover, .rules-btn:hover, .difficulty-btn:hover {
    color: white;
    background-color: rgba(50, 50, 50, 0.8);
    transform: scale(1.05);
 }
 
-.start-btn:active {
+.start-btn:active, .rules-btn:active {
    background-color: rgba(50, 50, 50, 0.6);
    transform: scale(1);
    z-index: 10;
+}
+
+.start-btn {
+   position: relative;
+   top: 150px;
+   margin: 0 auto;
 }
 
 .down-btns {
@@ -69,69 +97,23 @@ body {
    display: flex;
    justify-content: center;
    position: relative;
-   top: 250px;
+   top: 200px;
    margin: 0 auto;
    z-index: 10;
 }
 
 .rules-btn {
-   font-family: "Nunito", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 600;
-   font-style: normal;
-   font-size: 40px;
-   color: #333;
-   background-color: rgba(50, 50, 50, 0.5);
-   width: 300px;
-   border: 5px solid #333;
-   border-radius: 30px;
-   display: flex;
-   justify-content: center;
    margin-right: 50px;
-   cursor: pointer;
-   transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; 
-   z-index: 10;
-}
-
-.rules-btn:hover {
-   color: white;
-   background-color: rgba(50, 50, 50, 0.8);
-   transform: scale(1.05);
-}
-
-.rules-btn:active {
-   background-color: rgba(50, 50, 50, 0.6);
-   transform: scale(1);
 }
 
 .difficulty-btn {
-   font-family: "Nunito", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 600;
-   font-style: normal;
-   font-size: 40px;
-   color: #333;
-   background-color: rgba(50, 50, 50, 0.5);
-   width: 300px;
-   border: 5px solid #333;
-   border-radius: 30px;
-   display: flex;
-   justify-content: center;
    margin-left: 50px;
-   cursor: pointer;
-   transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
-   z-index: 10;
-}
-
-.difficulty-btn:hover {
-   color: white;
-   background-color: rgba(50, 50, 50, 0.8);
-   transform: scale(1.05);
 }
 
 .moon {
    width: 200vh;
    margin: 0 auto;
-  position: relative;
-  z-index: 1;
+   position: relative;
+   bottom: 50px;
+   z-index: 1;
 }

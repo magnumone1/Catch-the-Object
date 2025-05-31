@@ -10,7 +10,7 @@ btn_level.addEventListener('click', function() {
 anime({
   targets: '.moon',
   rotate: '360deg',
-  duration: 20000,
+  duration: 100000,
   easing: 'linear',
   loop: true
 });

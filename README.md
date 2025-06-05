@@ -6,14 +6,14 @@ This is a browser-based game in which the player must catch objects on the scree
 ## Features:
 * "Start" button
 * Difficulty level selection
-    * Easy
-    * Medium
-    * Hard
+   * Easy
+   * Medium
+   * Hard
 * Random appearance of objects
 * Objects that:
-    * Add points
-    * Subtract points
-    * Slow down time
+   * Add points
+   * Subtract points
+   * Slow down time
 * Click sounds
 * Final screen with game statistics
 

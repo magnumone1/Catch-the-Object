@@ -31,6 +31,19 @@ body {
    position: absolute;
 }
 
+.object.meteorit {
+   background-image: url('images/meteorit.png');
+   background-size: cover;
+   cursor: pointer;
+   position: absolute;
+}
+.object.moon {
+   background-image: url('images/moon.png');
+   background-size: cover;
+   cursor: pointer;
+   position: absolute;
+}
+
 #end-screen {
    display: none;
 }

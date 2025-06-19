@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
    <title>Catch the Object</title>
-   <link rel="stylesheet" href="style.css"/>
+   <link rel="stylesheet" href="style.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
 </head>
 <body>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+   <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
+
 
    <section id="start-screen">
-     <h1 class="main-name">CATCH THE OBJECT</h1>
-     <div class="container-moon">
-       <button class="start-btn">START</button>
-       <div class="down-btns">
-         <button class="rules-btn">Rules</button>
-         <button class="difficulty-btn">Easy</button>
-       </div>
-       <img class="moon" src="images/moon.png">
-     </div>
+      <h1 class="main-name">CATCH THE OBJECT</h1>
+      <div class="container-moon">
+         <button class="start-btn">START</button>
+         <div class="down-btns">
+            <button class="rules-btn">Rules</button>
+            <button class="difficulty-btn">Easy</button>
+         </div>
+         <img class="moon" src="images/moon.png" alt="Moon" />
+      </div>
    </section>
 
-   <section id="gameplay">
-     <div id="game-timer">01:00</div>
+
+   <section id="gameplay" style="display:none; position: relative;">
+      <div id="score">Очки: 0</div>
+      <div id="game-timer">01:00</div>
    </section>
 
-   <section id="end-screen">
-     <h2>Game Over!</h2>
+   <section id="end-screen" style="display:none; flex-direction: column; justify-content: center; align-items: center;">
+      <h2>Game Over!</h2>
+      <p id="final-score" style="font-size: 2rem; margin: 20px 0;"></p>
+      <button id="restart-btn" style="font-size: 24px; padding: 10px 30px; cursor: pointer; border-radius: 10px; border: none; background-color: #0077ff; color: white;">Грати ще</button>
    </section>
 
-   <script src="script.js"></script>
+   <script src="script.js" defer></script>
 </body>
 </html>
-

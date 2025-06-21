@@ -12,7 +12,9 @@ const timerDisplay = document.querySelector('#game-timer');
 const finalScoreDisplay = document.querySelector('#final-score');
 const restartBtn = document.querySelector('#restart-btn');
 
-const clickSound = new Audio('sounds/click.mp3');
+const soundStar = document.getElementById('sound-star');
+const soundMeteorit = document.getElementById('sound-meteorit');
+const soundComet = document.getElementById('sound-comet');
 
 let score = 0;
 let totalSeconds = 60;
@@ -94,17 +96,25 @@ function spawnObject() {   // Створює новий об'єкт
    });
 
    obj.addEventListener('click', function() {
-      clickSound.currentTime = 0;
-      clickSound.play();
-
-      if (type === 'comet') {
-         totalSeconds += 2;
-         score += 5;
-         slowMotionEffect();
-      } else if (type === 'star') {
+      if(type === 'star'){
+         console.log('Clicked star');
+         soundStar.pause();
+         soundStar.currentTime = 0;
+         soundStar.play().catch(e => console.log('Star sound error:', e));
          score += 1;
-      } else if (type === 'meteorit') {
+      } else if(type === 'meteorit'){
+         console.log('Clicked meteorit');
+         soundMeteorit.pause();
+         soundMeteorit.currentTime = 0;
+         soundMeteorit.play().catch(e => console.log('Meteorit sound error:', e));
          score -= 3;
+      } else if(type === 'comet'){
+         console.log('Clicked comet');
+         soundComet.pause();
+         soundComet.currentTime = 0;
+         soundComet.play().catch(e => console.log('Comet sound error:', e));
+         totalSeconds += 5;
+         slowMotionEffect();
       }
 
       updateScore();
@@ -146,6 +156,7 @@ function startTimer() {
 }
 
 function slowMotionEffect(duration = 3000, factor = 0.5) {
+   console.log('Start slow motion');
    clearInterval(objectSpawnInterval);
 
    const slowedInterval = 800 / factor;
@@ -160,6 +171,7 @@ function slowMotionEffect(duration = 3000, factor = 0.5) {
    }, slowedInterval);
 
    setTimeout(() => {
+      console.log('End slow motion');
       clearInterval(objectSpawnInterval);
       spawnObjectsPeriodically();
    }, duration);

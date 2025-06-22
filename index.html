@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
    <audio id="sound-star" src="sounds/star.mp3" preload="auto"></audio>
    <audio id="sound-meteorit" src="sounds/explosion.mp3" preload="auto"></audio>
    <audio id="sound-comet" src="sounds/comet.mp3" preload="auto"></audio>
@@ -19,7 +18,7 @@
       <div class="container-moon">
          <button class="start-btn">START</button>
          <div class="down-btns">
-            <button class="rules-btn">Rules</button>
+            <a href="rules.html" class="rules-btn">Rules</a>
             <button class="difficulty-btn">Easy</button>
          </div>
          <img class="moon" src="images/moon.png" alt="Moon" />
@@ -35,7 +34,8 @@
    <section id="end-screen">
       <h2>Game Over!</h2>
       <p id="final-score"></p>
-      <button id="restart-btn">Грати ще</button>
+      <button class="restart-btn">Грати ще</button>
+      <button class="menu-btn">Головне меню</button>
    </section>
 
    <script src="script.js" defer></script>

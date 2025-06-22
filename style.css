@@ -64,7 +64,7 @@ body {
      0 0 100px #0077ff;
 
    margin-top: 50px;
-   animation: pulseGlow 3s infinite alternate;
+   animation: pulseGlow 2s infinite alternate;
 }
 
 @keyframes pulseGlow {
@@ -142,6 +142,7 @@ body {
 
 .rules-btn {
    margin-right: 50px;
+   text-decoration: none;
 }
 
 .difficulty-btn {
@@ -215,7 +216,7 @@ body {
    text-shadow: 0 0 10px #00ffff;
 }
 
-#restart-btn {
+.restart-btn, .menu-btn {
    font-family: "Nunito", sans-serif;
    font-weight: 700;
    font-size: 32px;
@@ -229,7 +230,59 @@ body {
    transition: all 0.3s ease;
 }
 
-#restart-btn:hover {
+.restart-btn:hover, .menu-btn:hover {
    background-color: rgba(255, 255, 255, 1);
    transform: scale(1.05);
+}
+
+.rules-bg {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   background: rgba(0,0,0,0.7);
+   padding: 40px 60px;
+   border-radius: 20px;
+   max-width: 500px;
+   box-shadow: 0 0 30px #000000;
+}
+
+.rules-title {
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.rules-list {
+   font-size: 20px;
+   line-height: 1.65;
+}
+
+.rules-link {
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 30px;
+   color: #fff;
+   font-size: 20px;
+   text-decoration: none;
+   background: #0077ff;
+   padding: 12px 24px;
+   border-radius: 12px;
+   box-shadow: 0 2px 12px #0077ff55;
+   font-weight: 700;
+   letter-spacing: 1px;
+   transition: background 0.2s, transform 0.2s;
+   cursor: pointer;
+}
+
+.rules-link:hover {
+   background: #005fcc;
+   transform: scale(1.05);
+}
+
+.rules-body {
+   font-family: "Nunito", sans-serif;
+   background-image: url('images/background.jpg');
+   color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }

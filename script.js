@@ -4,13 +4,19 @@ const end_screen = document.querySelector('#end-screen');
 
 const btn_start = document.querySelector('.start-btn');
 const btn_level = document.querySelector('.difficulty-btn');
+
 const levels = ['Easy', 'Medium', 'Hard'];
-let currentIndex = 0;
+const levelSettings = {
+   'Easy': 1200,
+   'Medium': 800,
+   'Hard': 400
+};
 
 const scoreDisplay = document.querySelector('#score');
 const timerDisplay = document.querySelector('#game-timer');
 const finalScoreDisplay = document.querySelector('#final-score');
-const restartBtn = document.querySelector('#restart-btn');
+const restartBtn = document.querySelector('.restart-btn');
+const menuBtn = document.querySelector('.menu-btn')
 
 const soundStar = document.getElementById('sound-star');
 const soundMeteorit = document.getElementById('sound-meteorit');
@@ -20,6 +26,8 @@ let score = 0;
 let totalSeconds = 60;
 let timerInterval;
 let objectSpawnInterval;
+
+let currentIndex = 0;
 
 btn_level.addEventListener('click', () => {   // Змінює рівень складності
 	currentIndex = (currentIndex + 1) % levels.length;
@@ -38,14 +46,15 @@ btn_start.addEventListener('click', () => {   // Запускає гру
 	start_screen.style.display = 'none';
 	end_screen.style.display = 'none';
 	gameplay_screen.style.display = 'flex';
-	score = 0;
-	totalSeconds = 60;
 	updateScore();
 	startTimer();
 	spawnObjectsPeriodically();
 });
 
 function spawnObjectsPeriodically() {   // Створює об'єкти через проміжок часу
+   const currentLevel = levels[currentIndex];
+   const spawnInterval = levelSettings[currentLevel];
+
    objectSpawnInterval = setInterval(() => {
       const obj = spawnObject();
       setTimeout(() => {   // Видаляє об'єкт, якщо він не був спійманий
@@ -53,7 +62,7 @@ function spawnObjectsPeriodically() {   // Створює об'єкти чере
             obj.remove();
          }
       }, 3500);
-   }, 800);
+   }, spawnInterval);
 }
 
 function spawnObject() {   // Створює новий об'єкт
@@ -113,7 +122,7 @@ function spawnObject() {   // Створює новий об'єкт
          soundComet.pause();
          soundComet.currentTime = 0;
          soundComet.play().catch(e => console.log('Comet sound error:', e));
-         totalSeconds += 5;
+         totalSeconds += 3;
          slowMotionEffect();
       }
 
@@ -159,7 +168,9 @@ function slowMotionEffect(duration = 3000, factor = 0.5) {
    console.log('Start slow motion');
    clearInterval(objectSpawnInterval);
 
-   const slowedInterval = 800 / factor;
+   const currentLevel = levels[currentIndex];
+   const baseInterval = levelSettings[currentLevel];
+   const slowedInterval = baseInterval / factor;
 
    objectSpawnInterval = setInterval(() => {
       const obj = spawnObject();
@@ -187,7 +198,18 @@ function endGame() {
    finalScoreDisplay.textContent = `Ваш рахунок: ${score}`;
 }
 
-restartBtn.addEventListener('click', () => {
+restartBtn.addEventListener('click', () => {   // Запускає гру заново
+	start_screen.style.display = 'none';
+	end_screen.style.display = 'none';
+	gameplay_screen.style.display = 'flex';
+	score = 0;
+	totalSeconds = 60;
+	updateScore();
+	startTimer();
+	spawnObjectsPeriodically();
+});
+
+menuBtn.addEventListener('click', () => {   // Повертає на головне меню
    end_screen.style.display = 'none';
    start_screen.style.display = 'flex';
 });
